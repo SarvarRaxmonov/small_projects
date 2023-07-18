@@ -20,9 +20,9 @@ class WebScraperTool:
     def scrapping_web_page(self, url: str):
         page_to_scrape = requests.get(url)
         soup = BeautifulSoup(page_to_scrape.content, "html.parser")
-        return self.compounding_data(soup)
+        return self.compounding_data(soup, url)
 
-    def compounding_data(self, soup_response):
+    def compounding_data(self, soup_response, data_url: str):
         product_title = soup_response.find("h1", {"class": "product-title"})
         product_price = soup_response.find(
             "span", {"itemprop": "price", "class": "price-box_new-price"}
