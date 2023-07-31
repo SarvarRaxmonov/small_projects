@@ -56,3 +56,6 @@ class WebScraperTool:
         )
 
         return [product_image, data]
+
+
+
